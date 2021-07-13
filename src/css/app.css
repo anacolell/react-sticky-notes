@@ -2,11 +2,16 @@
 
 * {
   box-sizing: border-box;
+  padding:0;
+  margin:0;
 }
 
 body {
   margin: 0;
   padding: 0;
+  background: center no-repeat url('../img/background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 input,
@@ -21,6 +26,14 @@ textarea {
   padding: 10px;
   margin: 0;
 }
+
+/*.note:nth-child(3n) {
+  transform:rotate(-3deg);
+}
+
+.note:nth-child(5n) {
+  transform:rotate(5deg);
+}*/
 
 .app-header__title {
   margin: 10px 20px 0px;
@@ -59,13 +72,13 @@ textarea {
   width: 200px;
   height: 200px;
   margin: 10px;
-  background-color: lightyellow;
-  border: 1px solid grey;
-  box-shadow: 2px 2px 3px lightgrey;
+  background-color: #cbe1ef;
+  box-shadow: 2px 2px 3px grey;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   position: relative;
+/*  transform: rotate(6deg);;*/
 }
 
 .note__title,
@@ -74,6 +87,7 @@ textarea {
   width: 100%;
   padding: 8px 14px;
   background: transparent;
+  border:none;
 }
 
 .note__title {
