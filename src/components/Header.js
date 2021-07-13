@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Header({handleNewNote}) {
+export default function Header({ handleNewNote }) {
   return (
     <>
      <header className="app-header">

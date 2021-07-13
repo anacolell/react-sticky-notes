@@ -1,6 +1,13 @@
 import React from 'react'
+import NotesList from './NotesList'
 
-export default function Note( {title, description}) {
+export default function Note(props) {
+  const {
+    title,
+    description,
+    handleNoteDelete,
+    id
+  } = props
   return (
     <>
       <li className="note">
@@ -15,7 +22,12 @@ export default function Note( {title, description}) {
           placeholder="Description..."
           value={description}
         />
-        <span className="note__delete">X</span>
+        <span
+          className="note__delete"
+          onClick={() => handleNoteDelete(id)}
+        >
+          X
+          </span>
       </li>
     </>
   )

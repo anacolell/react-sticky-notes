@@ -16,13 +16,18 @@ function App() {
     setNotes([...notes, newNote])
   }
 
+  function handleNoteDelete(id){
+    setNotes(notes.filter(note => note.id !== id))
+  }
+
   return (
     <div>
       <Header
         handleNewNote={handleNewNote}
-       />
+      />
       <NotesList
         notes={notes}
+        handleNoteDelete={handleNoteDelete}
       />
     </div>
   )
