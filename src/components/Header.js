@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { NoteContext } from './App'
 
-export default function Header({ handleNewNote }) {
+export default function Header() {
+  const { handleNewNote } = useContext(NoteContext)
   return (
     <>
      <header className="app-header">

@@ -1,11 +1,11 @@
-import React from 'react'
-import NotesList from './NotesList'
+import React, { useContext } from 'react'
+import { NoteContext } from './App'
 
 export default function Note(props) {
+  const { handleNoteDelete } = useContext(NoteContext)
   const {
     title,
     description,
-    handleNoteDelete,
     id
   } = props
   return (
@@ -24,7 +24,7 @@ export default function Note(props) {
         />
         <span
           className="note__delete"
-          onClick={() => handleNoteDelete(id)}
+          onClick={() => handleNoteDelete(id )}
         >
           X
           </span>

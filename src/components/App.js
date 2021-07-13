@@ -4,8 +4,15 @@ import NotesList from './NotesList';
 import '../css/app.css'
 import { v4 as uuidv4 } from 'uuid';
 
+export const NoteContext = React.createContext()
+
 function App() {
   const [notes, setNotes] = useState(sampleNotes)
+
+  const noteContextValue = {
+    handleNewNote,
+    handleNoteDelete
+  }
 
   function handleNewNote() {
     const newNote = {
@@ -21,15 +28,18 @@ function App() {
   }
 
   return (
-    <div>
-      <Header
-        handleNewNote={handleNewNote}
-      />
-      <NotesList
-        notes={notes}
-        handleNoteDelete={handleNoteDelete}
-      />
-    </div>
+    <NoteContext.Provider value={noteContextValue}>
+
+      <div>
+        <Header
+          handleNewNote={handleNewNote}
+        />
+        <NotesList
+          notes={notes}
+          handleNoteDelete={handleNoteDelete}
+        />
+      </div>
+    </NoteContext.Provider>
   )
 }
 
