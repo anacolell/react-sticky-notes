@@ -7,6 +7,7 @@ export default function NotesList( {notes, handleNoteDelete}) {
       {notes.map(note => {
         return (
           <Note
+            note={note}
             key={note.id}
             handleNoteDelete={handleNoteDelete}
             {...note}

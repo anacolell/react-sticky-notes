@@ -22,7 +22,8 @@ function App() {
 
   const noteContextValue = {
     handleNewNote,
-    handleNoteDelete
+    handleNoteDelete,
+    handleNoteChange
   }
 
   function handleNewNote() {
@@ -36,6 +37,13 @@ function App() {
 
   function handleNoteDelete(id){
     setNotes(notes.filter(note => note.id !== id))
+  }
+
+  function handleNoteChange(id, newNote) {
+    const newNotes = [...notes]
+    const index = newNotes.findIndex(n => n.id === id)
+    newNotes[index] = newNote
+    setNotes(newNotes)
   }
 
   return (
