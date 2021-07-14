@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import NotesList from './NotesList';
 import '../css/app.css'
 import { v4 as uuidv4 } from 'uuid';
 
 export const NoteContext = React.createContext()
+const LOCAL_STORAGE_KEY = 'reactStickyNotes.notes'
 
 function App() {
   const [notes, setNotes] = useState(sampleNotes)
+
+  useEffect(() => {
+    const noteJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
+    if (noteJSON !== null) setNotes(JSON.parse(noteJSON))
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(notes))
+  }, [notes])
+
 
   const noteContextValue = {
     handleNewNote,
