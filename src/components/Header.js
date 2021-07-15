@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { NoteContext } from './App'
 
 export default function Header() {
-  const { handleNewNote } = useContext(NoteContext)
+  const { handleNewNote, handleNoteSearch } = useContext(NoteContext)
   return (
     <>
      <header className="app-header">
@@ -16,6 +16,7 @@ export default function Header() {
             className="search"
             type="text"
             placeholder="Type here to search..."
+            onChange = {(e) => handleNoteSearch(e.target.value)}
           />
         </aside>
       </header>

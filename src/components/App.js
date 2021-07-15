@@ -9,6 +9,8 @@ const LOCAL_STORAGE_KEY = 'reactStickyNotes.notes'
 
 function App() {
   const [notes, setNotes] = useState(sampleNotes)
+  const [searchText, setSearchText] = useState()
+
 
   useEffect(() => {
     const noteJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
@@ -23,7 +25,8 @@ function App() {
   const noteContextValue = {
     handleNewNote,
     handleNoteDelete,
-    handleNoteChange
+    handleNoteChange,
+    handleNoteSearch
   }
 
   function handleNewNote() {
@@ -46,14 +49,21 @@ function App() {
     setNotes(newNotes)
   }
 
+  function handleNoteSearch(input) {
+    setSearchText(input)
+  }
+
+  const filteredNotes = searchText != null ? notes.filter(n => n.title.toLowerCase().includes(searchText)) : notes
+
   return (
     <NoteContext.Provider value={noteContextValue}>
-
       <div>
         <Header
           handleNewNote={handleNewNote}
+          handleNoteSearch={handleNoteSearch}
         />
         <NotesList
+          filteredNotes={filteredNotes}
           notes={notes}
           handleNoteDelete={handleNoteDelete}
         />

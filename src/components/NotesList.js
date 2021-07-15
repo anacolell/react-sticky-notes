@@ -1,10 +1,10 @@
 import React from 'react'
 import Note from './Note'
 
-export default function NotesList( {notes, handleNoteDelete}) {
+export default function NotesList( {notes, handleNoteDelete, searchText, filteredNotes }) {
   return (
     <ul className="notes-list">
-      {notes.map(note => {
+      {filteredNotes.map(note => {
         return (
           <Note
             note={note}
