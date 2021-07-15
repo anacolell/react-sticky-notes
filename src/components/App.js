@@ -75,18 +75,18 @@ function App() {
 const sampleNotes = [
   {
     id: 0,
-    title: "eat",
-    description: "reese peanut butter cups"
+    title: "Study",
+    description: "Math exam"
   },
   {
     id: 1,
-    title: "sleep",
-    description: "eight hours"
+    title: "grocery shopping",
+    description: "Tomato sauce and pasta"
   },
   {
     id: 2,
     title: "code",
-    description: "build an awesome ui"
+    description: "build an awesome app"
   }
 ]
 
