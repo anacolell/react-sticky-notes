@@ -27,8 +27,7 @@ function App() {
     handleNewNote,
     handleNoteDelete,
     handleNoteChange,
-    handleNoteSearch,
-    randomColor
+    handleNoteSearch
   }
 
   function handleNewNote() {
@@ -36,7 +35,8 @@ function App() {
       id: uuidv4(),
       title: 'title',
       description: 'description',
-      color: randomColor()
+      color: randomColor(),
+      angle: randomAngle()
     }
     setNotes([...notes, newNote])
     console.log(notes)
@@ -61,8 +61,14 @@ function App() {
 
   function randomColor() {
     const colors = ['#cbe1ef', '#d5eade', '#f9d8ff', '#f9dabd', '#fefde1']
-    let newColor =colors[Math.floor(Math.random() * colors.length)]
+    let newColor = colors[Math.floor(Math.random() * colors.length)]
     return newColor
+  }
+
+  function randomAngle() {
+    const angles = ['-2deg', '2deg', '2.5deg', '-2.5deg', '-3deg', '3deg']
+    let newAngle = angles[Math.floor(Math.random() * angles.length)]
+    return newAngle
   }
 
   return (

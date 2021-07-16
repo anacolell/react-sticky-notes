@@ -12,7 +12,8 @@ export default function Note(props) {
     description,
     id,
     color,
-    note
+    note,
+    angle
   } = props
 
   function handleChange(changes) {
@@ -23,7 +24,7 @@ export default function Note(props) {
     <>
       <li
         className="note"
-        style={{backgroundColor: color}}
+        style={{backgroundColor: color, transform: `rotate(${angle})`}}
         >
         <input
           className="note__title"
