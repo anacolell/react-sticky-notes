@@ -11,6 +11,7 @@ export default function Note(props) {
     title,
     description,
     id,
+    color,
     note
   } = props
 
@@ -20,7 +21,10 @@ export default function Note(props) {
 
   return (
     <>
-      <li className="note">
+      <li
+        className="note"
+        style={{backgroundColor: color}}
+        >
         <input
           className="note__title"
           type="text"

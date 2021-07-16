@@ -32,6 +32,12 @@
   border-radius: 5px;
   cursor: pointer;
   font-weight: bolder;
-  background-color: #eee;
+  background-color: #757171;
   outline: none;
+  color: white;
+  transition: 0.6s;
+}
+
+.add-new:hover {
+  background-color: #878585;
 }

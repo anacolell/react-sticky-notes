@@ -27,16 +27,19 @@ function App() {
     handleNewNote,
     handleNoteDelete,
     handleNoteChange,
-    handleNoteSearch
+    handleNoteSearch,
+    randomColor
   }
 
   function handleNewNote() {
     const newNote = {
       id: uuidv4(),
       title: 'title',
-      description: 'description'
+      description: 'description',
+      color: randomColor()
     }
     setNotes([...notes, newNote])
+    console.log(notes)
   }
 
   function handleNoteDelete(id){
@@ -55,6 +58,12 @@ function App() {
   }
 
   const filteredNotes = searchText != null ? notes.filter(n => n.title.toLowerCase().includes(searchText)) : notes
+
+  function randomColor() {
+    const colors = ['#cbe1ef', '#d5eade', '#f9d8ff', '#f9dabd', '#fefde1']
+    let newColor =colors[Math.floor(Math.random() * colors.length)]
+    return newColor
+  }
 
   return (
     <NoteContext.Provider value={noteContextValue}>
