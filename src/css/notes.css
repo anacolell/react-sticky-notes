@@ -1,0 +1,82 @@
+.notes-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  margin: 0;
+}
+
+.note {
+  width: 250px;
+  height: 250px;
+  margin: 25px;
+/*  transform: rotate(-3deg);*/
+  background-color: #cbe1ef;
+  box-shadow: 3px 3px 4px rgba(33,33,33,.6);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding:25px;
+}
+
+.note:hover {
+  transform: scale3d(1.02, 1.02, 1.01);
+}
+
+/*
+.note:nth-child(even) {
+  transform:rotate(3.5deg);
+  background-color:#d5eade;
+}
+
+.note:nth-child(3n) {
+  transform:rotate(-3deg);
+  background-color: #f9d8ff;
+}
+
+.note:nth-child(6n) {
+  transform:rotate(-3deg);
+  background-color: #f9dabd;
+}
+
+.note:nth-child(5n) {
+  transform:rotate(3.5deg);
+  background-color: #fefde1;
+}*/
+
+/* note content */
+
+.note__title,
+.note__description {
+  font-family: 'The Girl Next Door', cursive;
+  width: 100%;
+  background: transparent;
+  border:none;
+}
+
+.note__title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.note__description {
+  flex-grow: 1;
+  font-size: 18px;
+}
+
+/* note delete */
+
+.note__delete {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  font-size: 14px;
+  color: darkgrey;
+  padding: 5px;
+}
+
+.note__delete:hover {
+  color: grey;
+  cursor: pointer;
+}

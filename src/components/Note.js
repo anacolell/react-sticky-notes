@@ -1,5 +1,8 @@
 import React, { useContext } from 'react'
 import { NoteContext } from './App'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+
 
 export default function Note(props) {
   const { handleNoteDelete, handleNoteChange } = useContext(NoteContext)
@@ -35,7 +38,7 @@ export default function Note(props) {
           className="note__delete"
           onClick={() => handleNoteDelete(id )}
         >
-          X
+          <FontAwesomeIcon icon={faTrash} />
           </span>
       </li>
     </>

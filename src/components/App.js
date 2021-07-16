@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import NotesList from './NotesList';
 import '../css/app.css'
+
 import { v4 as uuidv4 } from 'uuid';
 
 export const NoteContext = React.createContext()
@@ -32,8 +33,8 @@ function App() {
   function handleNewNote() {
     const newNote = {
       id: uuidv4(),
-      title: 'New sticky note',
-      description: 'Description'
+      title: 'title',
+      description: 'description'
     }
     setNotes([...notes, newNote])
   }

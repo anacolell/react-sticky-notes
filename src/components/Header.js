@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <>
      <header className="app-header">
-        <h1 className="app-header__title">Sticky Notes</h1>
+        <h1 className="app-header__title">My sticky notes</h1>
         <aside className="app-header__controls">
           <button
             className="add-new"
