@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Header from './Header';
 import NotesList from './NotesList';
 import '../css/app.css'
@@ -9,6 +9,9 @@ export const NoteContext = React.createContext()
 const LOCAL_STORAGE_KEY = 'reactStickyNotes.notes'
 
 function App() {
+  const draggingItem = useRef();
+  const dragOverItem = useRef();
+
   const [notes, setNotes] = useState(sampleNotes)
   const [searchText, setSearchText] = useState()
 
@@ -27,7 +30,9 @@ function App() {
     handleNewNote,
     handleNoteDelete,
     handleNoteChange,
-    handleNoteSearch
+    handleNoteSearch,
+    handleDragStart,
+    handleDragEnter
   }
 
   function handleNewNote() {
@@ -71,17 +76,29 @@ function App() {
     return newAngle
   }
 
+  function handleDragStart(e, position){
+    draggingItem.current = position;
+  };
+
+  function handleDragEnter(e, position){
+    dragOverItem.current = position;
+    const listCopy = [...notes];
+    const draggingItemContent = listCopy[draggingItem.current];
+    listCopy.splice(draggingItem.current, 1);
+    listCopy.splice(dragOverItem.current, 0, draggingItemContent);
+
+    draggingItem.current = dragOverItem.current;
+    dragOverItem.current = null;
+    setNotes(listCopy);
+  };
+
   return (
     <NoteContext.Provider value={noteContextValue}>
       <div>
-        <Header
-          handleNewNote={handleNewNote}
-          handleNoteSearch={handleNoteSearch}
-        />
+        <Header/>
         <NotesList
           filteredNotes={filteredNotes}
           notes={notes}
-          handleNoteDelete={handleNoteDelete}
         />
       </div>
     </NoteContext.Provider>
