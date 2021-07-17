@@ -62,7 +62,10 @@ function App() {
     setSearchText(input)
   }
 
-  const filteredNotes = searchText != null ? notes.filter(n => n.title.toLowerCase().includes(searchText)) : notes
+  const filteredNotes = searchText != null
+  ? notes.filter(n => n.title.toLowerCase().includes(searchText)
+  || n.description.toLowerCase().includes(searchText))
+  : notes
 
   function randomColor() {
     const colors = ['#cbe1ef', '#d5eade', '#f9d8ff', '#f9dabd', '#fefde1']
