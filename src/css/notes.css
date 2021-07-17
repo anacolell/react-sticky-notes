@@ -10,7 +10,6 @@
   width: 250px;
   height: 250px;
   margin: 25px;
-/*  transform: rotate(-3deg);*/
   background-color: #cbe1ef;
   box-shadow: 3px 3px 4px rgba(33,33,33,.6);
   border-radius: 2px;
@@ -28,7 +27,7 @@
 
 .note__title,
 .note__description {
-  font-family: 'The Girl Next Door', cursive;
+  font-family: 'Kalam', cursive;
   width: 100%;
   background: transparent;
   border:none;
