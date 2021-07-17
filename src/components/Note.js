@@ -40,13 +40,11 @@ export default function Note(props) {
         <input
           className="note__title"
           type="text"
-          // placeholder="Title"
           value={title}
           onChange= {e => handleChange({title: e.target.value})}
         />
         <textarea
           className="note__description"
-          // placeholder="Description..."
           value={description}
           onChange= {e => handleChange({description: e.target.value})}
         />

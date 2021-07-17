@@ -38,8 +38,8 @@ function App() {
   function handleNewNote() {
     const newNote = {
       id: uuidv4(),
-      title: 'title',
-      description: 'description',
+      title: 'Title',
+      description: '...',
       color: randomColor(),
       angle: randomAngle()
     }

@@ -17,6 +17,7 @@
   flex-direction: column;
   position: relative;
   padding:25px;
+  cursor:grab;
 }
 
 .note:hover {
