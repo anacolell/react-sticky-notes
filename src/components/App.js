@@ -111,19 +111,21 @@ function App() {
 const sampleNotes = [
   {
     id: 0,
-    title: "Study",
-    description: "Math exam"
+    title: "Title",
+    description: "...",
+    color: '#cbe1ef',
+    angle: '2deg'
   },
-  {
-    id: 1,
-    title: "grocery shopping",
-    description: "Tomato sauce and pasta"
-  },
-  {
-    id: 2,
-    title: "code",
-    description: "build an awesome app"
-  }
+  // {
+  //   id: 1,
+  //   title: "grocery shopping",
+  //   description: "Tomato sauce and pasta"
+  // },
+  // {
+  //   id: 2,
+  //   title: "code",
+  //   description: "build an awesome app"
+  // }
 ]
 
 export default App;
