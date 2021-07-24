@@ -1,1 +1,1 @@
-![Movie gif](https://gfycat.com/easydensegraywolf)
+![sticky-notes gif](https://gfycat.com/ifr/EasyDenseGraywolf)
