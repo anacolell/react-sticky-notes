@@ -1,1 +1,1 @@
-![sticky-notes gif](https://gfycat.com/ifr/EasyDenseGraywolf)
+![sticky-notes gif](https://media.giphy.com/media/aKcTgunC6kswDZRSLL/giphy.gif)
